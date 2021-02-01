@@ -1,24 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+//allows this context to be imported someplace else
+export const GlobalCtx = React.createContext(null)
+
+const [gState, setGState] = React.useState({})
 
 function App() {
   return (
+    <GlobalCtx.Provider value={{gState, setGState}}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
+    </GlobalCtx.Provider>
   );
 }
 
