@@ -2,6 +2,7 @@ import React from "react"
 import './App.css';
 import Header from "./components/Header"
 import { Route, Link, Switch } from "react-router-dom"
+import Login from "./pages/login"
 
 //allows this context to be imported someplace else
 export const GlobalCtx = React.createContext(null)
@@ -17,7 +18,9 @@ function App() {
       <Header/>
       <main>
         <Switch>
+          <Route path="/login" render= {(rp => <Login />)}/>
           <Route path="/" render= {(rp => <h1>HOME</h1>)}/>
+
         </Switch>
       </main>
     </div>
