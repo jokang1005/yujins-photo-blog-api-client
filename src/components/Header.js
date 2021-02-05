@@ -6,7 +6,6 @@ const Header = (props) => {
     return (
         <nav>
             <Link to="/something">Something</Link>
-            
         </nav>
     )
 }
