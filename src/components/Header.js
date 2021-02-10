@@ -5,7 +5,10 @@ const Header = (props) => {
 
     return (
         <nav>
-            <Link to="/something">Something</Link>
+            <Link to="/">Home</Link>
+            <Link to="/works">Works</Link>
+            <Link to="/about">About</Link>
+            <Link to="/getintouch">Get in touch</Link>
         </nav>
     )
 }

@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./components/Header"
 import { Route, Link, Switch } from "react-router-dom"
 import Login from "./pages/login"
+import Home from "./pages/home"
 
 //allows this context to be imported someplace else
 export const GlobalCtx = React.createContext(null)
@@ -19,7 +20,7 @@ function App() {
       <main>
         <Switch>
           <Route path="/login" render= {(rp => <Login />)}/>
-          <Route path="/" render= {(rp => <h1>HOME</h1>)}/>
+          <Route path="/" render= {((...rp) => <Home />)}/>
 
         </Switch>
       </main>
