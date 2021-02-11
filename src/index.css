@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*FORM STYLING*/ 
+form {
+  border: solid black 5px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 15px;
+}
+
+input[type="text"], input[type="password"] {
+  padding: 5px;
+  margin: 8px;
+  background-color: seagreen;
+  color: aliceblue;
+  font-size: 24px;
+}
+
+input[type="submit"] {
+  padding: 5px;
+  margin: 8px;
+  background-color: seagreen;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: blue;
+}

@@ -9,18 +9,19 @@ import Home from "./pages/home"
 export const GlobalCtx = React.createContext(null)
 
 const url = "http://localhost:3000"
+const token = null
 
 
 function App() {
-  const [gState, setGState] = React.useState({url})
+  const [gState, setGState] = React.useState({url, token})
   return (
     <GlobalCtx.Provider value={{gState, setGState}}>
     <div className="App">
       <Header/>
       <main>
         <Switch>
-          <Route path="/login" render= {(rp => <Login />)}/>
-          <Route path="/" render= {((...rp) => <Home />)}/>
+          <Route path="/login" render= {(rp => <Login {...rp}/>)}/>
+          <Route path="/" render= {((rp) => <Home {...rp}/>)}/>
 
         </Switch>
       </main>
