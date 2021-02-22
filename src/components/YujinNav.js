@@ -10,10 +10,12 @@ const YujinNav = (props) => {
 
     return(
         <nav>
+            
             <Link to="/"><h2 onClick={() => {
                 window.localStorage.removeItem("token")
                 setGState({...gState, token: null})
             }}>Logout</h2></Link>
+
         </nav>
     )
 }
