@@ -8,14 +8,14 @@ const YujinNav = (props) => {
 
     //USE THIS TO POSSIBLY CHANGE THE CODING FROM CLASS TO FUNCTIONAL... BUT NOT SURE HOW YET.
     // const blank = {
-    //     username: "",
-    //     password: ""
+    //     imageName: "",
+    //     imageData: ""
     // }
 
-    // const [form, setForm] = React.useState(blank)
+    // const [image, setImage] = React.useState(blank)
 
     // const handleChange = (e) => {
-    //     setForm({...form, [e.target.name]: e.target.value })
+    //     setImage({...image, [e.target.name]: e.target.value })
     // }
 
     return(
