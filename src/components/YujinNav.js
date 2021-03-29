@@ -1,22 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { GlobalCtx } from '../App'
+import {useState, useEffect} from 'react'
+import axios from "axios"
 
 const YujinNav = (props) => {
 
     const {gState, setGState} = React.useContext(GlobalCtx)
-
-    //USE THIS TO POSSIBLY CHANGE THE CODING FROM CLASS TO FUNCTIONAL... BUT NOT SURE HOW YET.
-    // const blank = {
-    //     imageName: "",
-    //     imageData: ""
-    // }
-
-    // const [image, setImage] = React.useState(blank)
-
+    const [name, setName] = useState();
+    const [file, setFile] = useState();
+    
     // const handleChange = (e) => {
-    //     setImage({...image, [e.target.name]: e.target.value })
-    // }
+        //     const {value} = event.target;
+        //     setName(value)
+        // }
+        const send = event => {
+            const data = new FormData()
+            data.append("name", name)
+            data.append("file", file)
+
+            axios.post("http://localhost:3000/post", data).then(res => console.log(res)).catch(err => console.log(err))
+
+        }
 
     return(
         <>
@@ -29,14 +34,32 @@ const YujinNav = (props) => {
 
             </nav>
 
-            <div className="image-container">
-                <div className="process">
-                    <h4 className="process_heading">Process: Using Multer</h4>
-                    <p className="process_details">Upload image to a node server, connected to a MongoDB database, with the help of Multer</p>
-                    <input type="file" className="process_upload-btn" onChange={(e) => this.uploadImage(e, "multer")}/>
-                    {/* <img src= {this.multerImage} alt= "upload-image" className="process_image"/> */}
-                </div>
-            </div>
+           <form action="#">
+               <div className = "flex">
+                   <label htmlFor="name">Name</label>
+                   <input 
+                        type="text" 
+                        id="name"
+                        onChange= {(event) => {
+                            const {value} = event.target;
+                            setName(value)
+                        }}
+                        />
+               </div>
+               <div className="flex">
+                   <label htmlFor="file">File</label>
+                   <input 
+                        type="file" 
+                        id="file" 
+                        accept=".jpg"
+                        onChange={(event) => {
+                            const file = event.target.files[0]
+                            setFile(file)
+                        }}
+                            />
+               </div>
+           </form>
+           <button onClick = {send}>Upload</button>
         </>
     )
 }
